@@ -1,0 +1,116 @@
+/* body{
+	font-size:20px;
+} */
+
+
+html,
+body {
+	font-family: "Lato", "Noto Sans TC", sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #666666;
+	background-color: #f6f7f8;
+}
+
+
+/* Header */
+header {
+	height: 60px;
+	color: #666666;
+	box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+}
+
+nav {
+	max-width: 800px;
+	margin: 0 auto 0 auto;
+	padding: 0 20px 0 20px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nav-title {
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+main {
+	display: flex;
+}
+
+.main-left {
+	height: 90vh;
+	border: 1px red solid;
+	width: 10%
+}
+
+.main-middle {
+	height: 90vh;
+	border: 1px green solid;
+	width: 60%;
+	text-align: center;
+
+}
+
+.main-right {
+	height: 90vh;
+	border: 1px blue solid;
+	width: 30%
+}
+
+.region-item {
+	margin-top: 20px;
+	border: 1px #e8e8e8 solid;
+	text-align: center;
+	cursor: pointer;
+}
+
+.region-item:hover {
+	cursor: pointer;
+	background: #66aabb;
+	color: white;
+}
+
+svg {
+	border: 1px solid black;
+	display: block;
+	/* padding:auto; */
+}
+
+svg>g>path {
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+svg>g>path:hover {
+	fill: #66aabb;
+	transform: translate(-5px, -5px)
+}
+
+
+/* 全部縣市 */
+/* 臺北市、新北市、桃園市、臺中市、臺南市、高雄市、宜蘭縣、新竹縣、苗栗縣、彰化縣、南投縣、雲林縣、嘉義縣、屏東縣、花蓮縣、臺東縣、澎湖縣、基隆市、新竹市、嘉義市 */
+/* Taipei City,
+New Taipei City,
+Taoyuan City,
+Taichung City,
+Tainan City,
+Kaohsiung City,
+Yilan County,
+Hsinchu County,
+Miaoli County,
+Changhua County,
+Nantou County,
+Yunlin County,
+Chiayi County,
+Pingtung County,
+Hualien County,
+Taitung County,
+Penghu County,
+Keelung City,
+Hsinchu City,
+Chiayi City */
+
+/* 資料有的 */
+/* Yilan County Hualien County Pingtung County Miaoli County kaohsiung city Keelung City Yunlin County New Taipei City Taitung County Penghu County Tainan City Taichung City */
