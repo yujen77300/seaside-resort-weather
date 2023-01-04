@@ -1,4 +1,4 @@
-fetch("../Data/F-B0053-001.json")
+fetch("Data/F-B0053-001.json")
     .then(function (response) {
         return response.json()
     })
