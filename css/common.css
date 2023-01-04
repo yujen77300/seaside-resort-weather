@@ -40,27 +40,29 @@ main {
 }
 
 .main-left {
-	height: 90vh;
-	border: 1px red solid;
-	width: 10%
+	height: 10vh;
+	/* border: 1px red solid; */
+	width: 100%;
+	display:flex;
+	justify-content: space-around;
 }
 
 .main-middle {
-	height: 90vh;
-	border: 1px green solid;
-	width: 60%;
+	height: 93vh;
+	/* border: 1px green solid; */
+	width: 70%;
 	text-align: center;
 
 }
 
 .main-right {
 	height: 90vh;
-	border: 1px blue solid;
+	/* border: 1px blue solid; */
 	width: 30%
 }
 
 .region-item {
-	margin-top: 20px;
+	/* margin-top: 20px; */
 	border: 1px #e8e8e8 solid;
 	text-align: center;
 	cursor: pointer;
@@ -73,7 +75,7 @@ main {
 }
 
 svg {
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	display: block;
 	/* padding:auto; */
 }
