@@ -1,7 +1,6 @@
 /* 全域變數 */
 let roundLastSix = 6;
-
-fetch(window.location.protocol + "//" + window.location.host + "/" + "Data/F-B0053-001-after-Yunlin.json")
+fetch(window.location.protocol + "//" + window.location.host + "/" + window.location.pathname + "/" + "Data/F-B0053-001-after-Yunlin.json")
 .then(function(response){
     return response.json()
 })
