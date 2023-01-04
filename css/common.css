@@ -1,6 +1,4 @@
-/* body{
-	font-size:20px;
-} */
+
 
 
 html,
@@ -12,8 +10,6 @@ body {
 	background-color: #f6f7f8;
 }
 
-
-/* Header */
 header {
 	height: 60px;
 	color: #666666;
@@ -39,45 +35,87 @@ main {
 	display: flex;
 }
 
-.main-left {
-	height: 10vh;
-	/* border: 1px red solid; */
-	width: 100%;
-	display:flex;
-	justify-content: space-around;
-}
-
 .main-middle {
 	height: 93vh;
-	/* border: 1px green solid; */
 	width: 70%;
 	text-align: center;
-
+	position: relative;
 }
+.dropdown{
+    display: block;
+    justify-content: center;   
+}
+
+.choose{
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    text-align: center; 
+    color:#FFFFFF;
+    font-size: 16px;
+    border: 0;
+    padding: 10px;
+    width:100px;
+    height:20px;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0, 0.6);
+}
+.choose-icon{
+    margin-left: 5px;
+	cursor: pointer;
+}
+
+@keyframes expand{
+    from{
+      height: 0px;
+    }
+    to{
+      height: 420px;
+    }
+  }
+.main-left {
+    color:#e8e8e8;
+    position: absolute;
+    display: none;
+    overflow: hidden;
+    animation-name: expand;
+    animation-duration: 2s;
+    right: 0;
+    top: 40px;
+    list-style:none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 122px;    
+    border-radius: 5px;
+}
+
+
 
 .main-right {
 	height: 90vh;
-	/* border: 1px blue solid; */
 	width: 30%
 }
 
 .region-item {
-	/* margin-top: 20px; */
-	border: 1px #e8e8e8 solid;
+    margin: 1px 0 1px 0;
+    border: 0;
+    border-radius: 5px;
 	text-align: center;
+    padding: 6px 10px 6px 10px;
+    color: #FFFFFF;
+	background-color: rgb(102, 102, 102, 0.6);
 	cursor: pointer;
 }
 
 .region-item:hover {
 	cursor: pointer;
-	background: #66aabb;
-	color: white;
+	background: rgb(102, 170, 187, 0.6);
+	color: black;
 }
 
 svg {
-	/* border: 1px solid black; */
 	display: block;
-	/* padding:auto; */
 }
 
 svg>g>path {
@@ -90,6 +128,30 @@ svg>g>path:hover {
 	transform: translate(-5px, -5px)
 }
 
+
+@media (max-width:600px){
+	main {
+		display: block;
+	}
+	svg{
+		height:80vh; 
+		width:150%;
+		margin:0 0 0 130px;
+	}
+}
+@media (max-width:360px){
+	.choose{
+		width:88px;
+	}
+	.main-left {
+		width: 108px;    
+	}
+	svg{
+		margin:0 0 0 80px;
+	}
+
+	
+}
 
 /* 全部縣市 */
 /* 臺北市、新北市、桃園市、臺中市、臺南市、高雄市、宜蘭縣、新竹縣、苗栗縣、彰化縣、南投縣、雲林縣、嘉義縣、屏東縣、花蓮縣、臺東縣、澎湖縣、基隆市、新竹市、嘉義市 */
