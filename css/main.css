@@ -2,6 +2,7 @@
     background-image: url("../images/sand\ image.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
+    width: 900px; 
     height: 1200x;
 }
 .weather-info {
@@ -10,9 +11,7 @@
     position: absolute;
     top: 25%;
     left: 15%;
-    /* background-color: rgba(128, 182, 185, 0.5); */
     font-family: "Lato", "Noto Sans TC", sans-serif;
-    /* transform: translatey(-50%); */
 }
 
 
@@ -30,7 +29,6 @@
 .temperature {
     font-size: 4vmin;
     color:#666666;
-    /* opacity: 0.8; */
     font-weight: 700;
     letter-spacing: 1.8px;
     text-align: justify;
@@ -57,6 +55,12 @@
 }
 
 
+@media (max-width:600px){
+	.main-middle {
+		width: 100%;
+	}
+	
+}
 
 
 
