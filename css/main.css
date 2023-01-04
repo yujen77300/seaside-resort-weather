@@ -1,0 +1,65 @@
+.main-middle {
+    background-image: url("../images/sand\ image.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1200x;
+}
+.weather-info {
+    width: 400px;
+    height: auto;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    /* background-color: rgba(128, 182, 185, 0.5); */
+    font-family: "Lato", "Noto Sans TC", sans-serif;
+    /* transform: translatey(-50%); */
+}
+
+
+.location {
+    height: auto;
+    font-size: 60px;
+    color: #168aad;
+    padding-bottom: 40px;
+    text-align: justify; 
+    box-shadow: -18px -10px #caf0f8;
+    border-radius: 3px;
+    padding-top: 10px;
+   
+    
+}
+
+.temperature {
+    font-size: 4vmin;
+    color:#666666;
+    /* opacity: 0.8; */
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-align: justify;
+}
+
+.rain-posibilty {
+    font-size: 4vmin;
+    color: #666666;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    padding: 10px 0;
+    text-align: justify;
+}
+
+.uv {
+    font-size: 4vmin;
+    font-weight: 700;
+    color: #666666;
+    letter-spacing: 1.8px;
+    text-align: justify;
+    box-shadow: 18px 10px #caf0f8;
+    border-radius: 3px;
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
