@@ -5,7 +5,7 @@
     height: 1200x;
 }
 .weather-info {
-    width: 400px;
+    max-width: 400px;
     height: auto;
     position: absolute;
     top: 25%;
@@ -21,12 +21,10 @@
     font-size: 60px;
     color: #168aad;
     padding-bottom: 40px;
-    text-align: justify; 
+    text-align: justify;
     box-shadow: -18px -10px #caf0f8;
     border-radius: 3px;
     padding-top: 10px;
-   
-    
 }
 
 .temperature {
