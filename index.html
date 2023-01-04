@@ -8,6 +8,7 @@
 	<title>海水浴場一週24小時天氣預報</title>
 	<!-- 建立整體樣式指導：基礎字型、字體、基底色、標題、段落樣式等等 -->
 	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
 <body>
@@ -34,7 +35,32 @@
 			<div class="region-item" id="Taichung">臺中市</div>
 		</div>
 		<div class="main-middle">
-			最高溫、最低溫、紫外線、12小時降雨機率等
+			<!-- 最高溫、最低溫、紫外線、12小時降雨機率等 -->
+			<div class="weather-info">
+				<div class="location">
+					<span style="font-size: 60px;">
+						<i class="fa-solid fa-map-pin"></i></span>
+					頭城
+				</div>
+				<div class="temperature">
+					<span>
+						<i class="fa-solid fa-temperature-half fa-fw"></i>
+					</span>
+					<span class="temperature-content">18-22</span> ℃
+				</div>
+				<div class="rain-posibilty">
+					<span>
+						<i class="fa-solid fa-cloud-showers-heavy fa-fw"></i>
+					</span>
+					12小時降雨機率：<span class="rain-posibilty-content">50%</span>
+				</div>
+				<div class="uv">
+					<span>
+						<i class="fa-solid fa-sun fa-fw"></i>
+					</span>
+					紫外線指數：<span class="nv-content">4 / 中量級</span>
+				</div>
+			</div>
 		</div>
 		<div class="main-right">
 			<svg baseprofile="tiny" fill="#7c7c7c" height="90vh" width="100%" stroke="#ffffff" stroke-linecap="round"
@@ -164,7 +190,7 @@
 			</svg>
 		</div>
 	</main>
-
+	<script src="https://kit.fontawesome.com/e7ef059ad4.js" crossorigin="anonymous"></script>
 	<script src="js/common.js"></script>
 </body>
 
