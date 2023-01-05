@@ -5,13 +5,13 @@ items.forEach(function (item) {
     let region = e.target.id
     let regionNode = document.querySelector(`.${region}`);
     regionNode.firstElementChild.setAttribute("fill", "#66aabb")
-    regionNode.firstElementChild.setAttribute("transform", "translate(-5px,-5px)")
+    // regionNode.firstElementChild.setAttribute("transform", "translate(-5px,-5px)")
   })
   item.addEventListener('mouseleave', (e) => {
     let region = e.target.id
     let regionNode = document.querySelector(`.${region}`);
     regionNode.firstElementChild.removeAttribute("fill")
-    regionNode.firstElementChild.removeAttribute("transform")
+    // regionNode.firstElementChild.removeAttribute("transform")
   })
 })
 
