@@ -64,7 +64,7 @@ function showWeatherInfoByCounty(county, countyOnMap, countyLocationNameInArray)
         temperature.textContent = `${countyLocationNameInArray.weatherElement[4].time[0].elementValue.value}-${countyLocationNameInArray.weatherElement[3].time[0].elementValue.value}`;
         backgroundImg(countyLocationNameInArray.weatherElement[9].time[0].elementValue.value)
         rainPosibilty.textContent = countyLocationNameInArray.weatherElement[9].time[0].elementValue.value + "%";
-        nv.textContent = `${countyLocationNameInArray.weatherElement[13].time[0].elementValue[0].value} / ${countyLocationNameInArray.weatherElement[13].time[0].elementValue[1].value}`;
+        nv.textContent = `${countyLocationNameInArray.weatherElement[13].time[0].elementValue[0].value}/${countyLocationNameInArray.weatherElement[13].time[0].elementValue[1].value}`;
     });
 
     county.addEventListener("click", () => {
@@ -78,7 +78,7 @@ function showWeatherInfoByCounty(county, countyOnMap, countyLocationNameInArray)
         temperature.textContent = `${countyLocationNameInArray.weatherElement[4].time[0].elementValue.value}-${countyLocationNameInArray.weatherElement[3].time[0].elementValue.value}`;
         rainPosibilty.textContent = countyLocationNameInArray.weatherElement[9].time[0].elementValue.value + "%";
         backgroundImg(countyLocationNameInArray.weatherElement[9].time[0].elementValue.value)
-        nv.textContent = `${countyLocationNameInArray.weatherElement[13].time[0].elementValue[0].value} / ${countyLocationNameInArray.weatherElement[13].time[0].elementValue[1].value}`;
+        nv.textContent = `${countyLocationNameInArray.weatherElement[13].time[0].elementValue[0].value}/${countyLocationNameInArray.weatherElement[13].time[0].elementValue[1].value}`;
     });
 }
 
