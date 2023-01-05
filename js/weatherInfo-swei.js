@@ -1,52 +1,52 @@
-fetch("Data/F-B0053-001.json")
+fetch(`https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-B0053-001?Authorization=${CWB_API_KEY}&format=JSON`)
     .then(function (response) {
         return response.json()
     })
     .then(function (data) {
         let locations = data.cwbopendata.dataset.locations.location;
-        // console.log(locations)
+        backgroundImg(locations[0].weatherElement[9].time[0].elementValue.value)
         let locationData = [
             //宜蘭頭城
             {
                 "locationName": locations[0].locationName,
-                "temp": locations[0].weatherElement[4].time[3].elementValue.value + "-" + locations[0].weatherElement[3].time[3].elementValue.value,
-                "rain": locations[0].weatherElement[9].time[3].elementValue.value,
-                "uvi": locations[0].weatherElement[13].time[3].elementValue[0].value + "/" + locations[0].weatherElement[13].time[3].elementValue[1].value,
+                "temp": locations[0].weatherElement[4].time[0].elementValue.value + "-" + locations[0].weatherElement[3].time[0].elementValue.value,
+                "rain": locations[0].weatherElement[9].time[0].elementValue.value,
+                "uvi": locations[0].weatherElement[13].time[0].elementValue[0].value + "/" + locations[0].weatherElement[13].time[0].elementValue[1].value,
             },
             //花蓮磯崎
             {
                 "locationName": locations[1].locationName,
-                "temp": locations[1].weatherElement[4].time[3].elementValue.value + "-" + locations[1].weatherElement[3].time[3].elementValue.value,
-                "rain": locations[1].weatherElement[9].time[3].elementValue.value,
-                "uvi": locations[1].weatherElement[13].time[3].elementValue[0].value + "/" + locations[1].weatherElement[13].time[3].elementValue[1].value,
+                "temp": locations[1].weatherElement[4].time[0].elementValue.value + "-" + locations[1].weatherElement[3].time[0].elementValue.value,
+                "rain": locations[1].weatherElement[9].time[0].elementValue.value,
+                "uvi": locations[1].weatherElement[13].time[0].elementValue[0].value + "/" + locations[1].weatherElement[13].time[0].elementValue[1].value,
             },
             //屏東墾丁
             {
                 "locationName": locations[2].locationName,
-                "temp": locations[2].weatherElement[4].time[3].elementValue.value + "-" + locations[2].weatherElement[3].time[3].elementValue.value,
-                "rain": locations[2].weatherElement[9].time[3].elementValue.value,
-                "uvi": locations[2].weatherElement[13].time[3].elementValue[0].value + "/" + locations[2].weatherElement[13].time[3].elementValue[1].value,
+                "temp": locations[2].weatherElement[4].time[0].elementValue.value + "-" + locations[2].weatherElement[3].time[0].elementValue.value,
+                "rain": locations[2].weatherElement[9].time[0].elementValue.value,
+                "uvi": locations[2].weatherElement[13].time[0].elementValue[0].value + "/" + locations[2].weatherElement[13].time[0].elementValue[1].value,
             },
             //苗栗崎頂
             {
                 "locationName": locations[5].locationName,
-                "temp": locations[5].weatherElement[4].time[3].elementValue.value + "-" + locations[5].weatherElement[3].time[3].elementValue.value,
-                "rain": locations[5].weatherElement[9].time[3].elementValue.value,
-                "uvi": locations[5].weatherElement[13].time[3].elementValue[0].value + "/" + locations[5].weatherElement[13].time[3].elementValue[1].value,
+                "temp": locations[5].weatherElement[4].time[0].elementValue.value + "-" + locations[5].weatherElement[3].time[0].elementValue.value,
+                "rain": locations[5].weatherElement[9].time[0].elementValue.value,
+                "uvi": locations[5].weatherElement[13].time[0].elementValue[0].value + "/" + locations[5].weatherElement[13].time[0].elementValue[1].value,
             },
             //高雄西子灣
             {
                 "locationName": locations[7].locationName,
-                "temp": locations[7].weatherElement[4].time[3].elementValue.value + "-" + locations[7].weatherElement[3].time[3].elementValue.value,
-                "rain": locations[7].weatherElement[9].time[3].elementValue.value,
-                "uvi": locations[7].weatherElement[13].time[3].elementValue[0].value + "/" + locations[7].weatherElement[13].time[3].elementValue[1].value,
+                "temp": locations[7].weatherElement[4].time[0].elementValue.value + "-" + locations[7].weatherElement[3].time[0].elementValue.value,
+                "rain": locations[7].weatherElement[9].time[0].elementValue.value,
+                "uvi": locations[7].weatherElement[13].time[0].elementValue[0].value + "/" + locations[7].weatherElement[13].time[0].elementValue[1].value,
             },
             //基隆和平島
             {
                 "locationName": locations[9].locationName,
-                "temp": locations[9].weatherElement[4].time[3].elementValue.value + "-" + locations[9].weatherElement[3].time[3].elementValue.value,
-                "rain": locations[9].weatherElement[9].time[3].elementValue.value,
-                "uvi": locations[9].weatherElement[13].time[3].elementValue[0].value + "/" + locations[9].weatherElement[13].time[3].elementValue[1].value,
+                "temp": locations[9].weatherElement[4].time[0].elementValue.value + "-" + locations[9].weatherElement[3].time[0].elementValue.value,
+                "rain": locations[9].weatherElement[9].time[0].elementValue.value,
+                "uvi": locations[9].weatherElement[13].time[0].elementValue[0].value + "/" + locations[9].weatherElement[13].time[0].elementValue[1].value,
 
             },
         ]
@@ -64,11 +64,7 @@ function insertLocationData(locationData) {
 
     location.textContent = locationData[0].locationName
     temperatureContent.textContent = locationData[0].temp
-    if (locationData[0].rain == null) {
-        rainPosibiltyContent.textContent = 0
-    } else {
-        rainPosibiltyContent.textContent = locationData[0].rain
-    }
+    rainPosibiltyContent.textContent = locationData[0].rain + "%"
     nvContent.textContent = locationData[0].uvi
 
     let Yilan = document.querySelector("#Yilan")
@@ -76,21 +72,15 @@ function insertLocationData(locationData) {
     Yilan.addEventListener('click', () => {
         location.textContent = locationData[0].locationName
         temperatureContent.textContent = locationData[0].temp
-        if (locationData[0].rain == null) {
-            rainPosibiltyContent.textContent = 0
-        } else {
-            rainPosibiltyContent.textContent = locationData[0].rain
-        }
+        rainPosibiltyContent.textContent = locationData[0].rain + "%"
+        backgroundImg(locationData[0].rain)
         nvContent.textContent = locationData[0].uvi
     })
     yilan.addEventListener('click', () => {
         location.textContent = locationData[0].locationName
         temperatureContent.textContent = locationData[0].temp
-        if (locationData[0].rain == null) {
-            rainPosibiltyContent.textContent = 0
-        } else {
-            rainPosibiltyContent.textContent = locationData[0].rain
-        }
+        rainPosibiltyContent.textContent = locationData[0].rain + "%"
+        backgroundImg(locationData[0].rain)
         nvContent.textContent = locationData[0].uvi
     })
 
@@ -99,22 +89,16 @@ function insertLocationData(locationData) {
     Hualien.addEventListener('click', () => {
         location.textContent = locationData[1].locationName
         temperatureContent.textContent = locationData[1].temp
-        if (locationData[1].rain == null) {
-            rainPosibiltyContent.textContent = 0
-        } else {
-            rainPosibiltyContent.textContent = locationData[1].rain
-        }
+        rainPosibiltyContent.textContent = locationData[1].rain + "%"
+        backgroundImg(locationData[1].rain)
         nvContent.textContent = locationData[1].uvi
     })
 
     hualien.addEventListener('click', () => {
         location.textContent = locationData[1].locationName
         temperatureContent.textContent = locationData[1].temp
-        if (locationData[1].rain == null) {
-            rainPosibiltyContent.textContent = 0
-        } else {
-            rainPosibiltyContent.textContent = locationData[1].rain
-        }
+        rainPosibiltyContent.textContent = locationData[1].rain + "%"
+        backgroundImg(locationData[1].rain)
         nvContent.textContent = locationData[1].uvi
     })
 
@@ -127,19 +111,17 @@ function insertLocationData(locationData) {
         if (locationData[2].rain == null) {
             rainPosibiltyContent.textContent = 0
         } else {
-            rainPosibiltyContent.textContent = locationData[2].rain
+            rainPosibiltyContent.textContent = locationData[2].rain + "%"
         }
+        backgroundImg(locationData[2].rain)
         nvContent.textContent = locationData[2].uvi
     })
 
     pingtung.addEventListener('click', () => {
         location.textContent = locationData[2].locationName
         temperatureContent.textContent = locationData[2].temp
-        if (locationData[2].rain == null) {
-            rainPosibiltyContent.textContent = 0
-        } else {
-            rainPosibiltyContent.textContent = locationData[2].rain
-        }
+        rainPosibiltyContent.textContent = locationData[2].rain + "%"
+        backgroundImg(locationData[2].rain)
         nvContent.textContent = locationData[2].uvi
     })
 
@@ -149,21 +131,15 @@ function insertLocationData(locationData) {
     Miaoli.addEventListener('click', () => {
         location.textContent = locationData[3].locationName
         temperatureContent.textContent = locationData[3].temp
-        if (locationData[3].rain == null) {
-            rainPosibiltyContent.textContent = 0
-        } else {
-            rainPosibiltyContent.textContent = locationData[3].rain
-        }
+        rainPosibiltyContent.textContent = locationData[3].rain + "%"
+        backgroundImg(locationData[3].rain)
         nvContent.textContent = locationData[3].uvi
     })
     miaoli.addEventListener('click', () => {
         location.textContent = locationData[3].locationName
         temperatureContent.textContent = locationData[3].temp
-        if (locationData[3].rain == null) {
-            rainPosibiltyContent.textContent = 0
-        } else {
-            rainPosibiltyContent.textContent = locationData[3].rain
-        }
+        rainPosibiltyContent.textContent = locationData[3].rain + "%"
+        backgroundImg(locationData[3].rain)
         nvContent.textContent = locationData[3].uvi
     })
 
@@ -173,21 +149,15 @@ function insertLocationData(locationData) {
     Kaohsiung.addEventListener('click', () => {
         location.textContent = locationData[4].locationName
         temperatureContent.textContent = locationData[4].temp
-        if (locationData[4].rain == null) {
-            rainPosibiltyContent.textContent = 0
-        } else {
-            rainPosibiltyContent.textContent = locationData[4].rain
-        }
+        rainPosibiltyContent.textContent = locationData[4].rain + "%"
+        backgroundImg(locationData[4].rain)
         nvContent.textContent = locationData[4].uvi
     })
     kaohsiung.addEventListener('click', () => {
         location.textContent = locationData[4].locationName
         temperatureContent.textContent = locationData[4].temp
-        if (locationData[4].rain == null) {
-            rainPosibiltyContent.textContent = 0
-        } else {
-            rainPosibiltyContent.textContent = locationData[4].rain
-        }
+        rainPosibiltyContent.textContent = locationData[4].rain + "%"
+        backgroundImg(locationData[4].rain)
         nvContent.textContent = locationData[4].uvi
     })
 
@@ -196,26 +166,29 @@ function insertLocationData(locationData) {
     Keelung.addEventListener('click', () => {
         location.textContent = locationData[5].locationName
         temperatureContent.textContent = locationData[5].temp
-        if (locationData[5].rain == null) {
-            rainPosibiltyContent.textContent = 0
-        } else {
-            rainPosibiltyContent.textContent = locationData[5].rain
-        }
+        rainPosibiltyContent.textContent = locationData[5].rain + "%"
+        backgroundImg(locationData[5].rain)
         nvContent.textContent = locationData[5].uvi
     })
 
     keelung.addEventListener('click', () => {
         location.textContent = locationData[5].locationName
         temperatureContent.textContent = locationData[5].temp
-        if (locationData[5].rain == null) {
-            rainPosibiltyContent.textContent = 0
-        } else {
-            rainPosibiltyContent.textContent = locationData[5].rain
-        }
+        rainPosibiltyContent.textContent = locationData[5].rain + "%"
+        backgroundImg(locationData[5].rain)
         nvContent.textContent = locationData[5].uvi
     })
 
 }
 
 
-
+function backgroundImg(rainPosibilty) {
+    const main = document.querySelector('.main')
+    if (rainPosibilty >= 50) {
+        main.style.backgroundImage = "url(images/beach-rainy.jpg)"
+    } else if (rainPosibilty >= 30 && rainPosibilty < 50) {
+        main.style.backgroundImage = "url(images/beach-cloudy.jpg)"
+    } else {
+        main.style.backgroundImage = "url(images/beach-sunny.jpg)"
+    }
+}
