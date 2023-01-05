@@ -10,52 +10,56 @@ main {
 }
 
 .weather-info {
-    max-width: 400px;
+    max-width: 500px;
     height: auto;
     position: absolute;
     top: 25%;
     left: 15%;
     font-family: "Lato", "Noto Sans TC", sans-serif;
-}
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;;
+    background-color:rgb(102, 102, 102,0.6);
+    /* background-color: rgba(3, 63, 120, 0.6); */
+    border-radius: 10px;
+    padding: 30px;
+    }
 
 
 .location {
     height: auto;
     font-size: 60px;
-    color: #168aad;
+    color: #a5e8f9;;
     padding-bottom: 40px;
     text-align: justify;
-    box-shadow: -18px -10px #caf0f8;
+    /* box-shadow: -18px -10px #caf0f8; */
     border-radius: 3px;
     padding-top: 10px;
 }
 
 .temperature {
-    font-size: 4vmin;
+    font-size: 40px;
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1.8px;
     text-align: justify;
 }
 
 .rain-posibilty {
-    font-size: 4vmin;
+    font-size: 40px;
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1.8px;
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: justify;
 }
 
 .uv {
-    font-size: 4vmin;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 500;
     color: #ffffff;
     letter-spacing: 1.8px;
     text-align: justify;
-    box-shadow: 18px 10px #caf0f8;
-    border-radius: 3px;
-    padding-bottom: 10px;
+    /* box-shadow: 18px 10px #caf0f8; */
+    padding-bottom: 15px;
 }
 
 
