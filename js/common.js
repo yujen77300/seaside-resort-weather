@@ -1,3 +1,21 @@
+window.addEventListener('resize', function () {
+  // 获取窗口的宽度
+  const width = window.innerWidth;
+
+  // 获取 SVG 元素
+  const svg = document.querySelector('svg');
+  svg.removeAttribute('viewBox')
+
+  // 根据窗口宽度动态调整 viewbox 的值
+  console.log("寬度")
+  console.log(width)
+  if (width < 1000) {
+    svg.setAttribute('viewBox', '330 300 750 750');
+  }else{
+    svg.setAttribute('viewBox', '330 400 750 750');
+  }
+});
+
 
 const items = document.querySelectorAll('.region-item')
 items.forEach(function (item) {

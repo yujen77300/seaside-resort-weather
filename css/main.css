@@ -16,18 +16,19 @@ main {
     top: 25%;
     left: 15%;
     font-family: "Lato", "Noto Sans TC", sans-serif;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;;
-    background-color:rgb(102, 102, 102,0.6);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: rgb(102, 102, 102, 0.6);
     /* background-color: rgba(3, 63, 120, 0.6); */
     border-radius: 10px;
     padding: 30px;
-    }
+}
 
 
 .location {
     height: auto;
     font-size: 60px;
-    color: #a5e8f9;;
+    color: #a5e8f9;
+    ;
     padding-bottom: 40px;
     text-align: justify;
     /* box-shadow: -18px -10px #caf0f8; */
@@ -63,9 +64,32 @@ main {
 }
 
 
+@media (max-width:1100px) {
+    .weather-info {
+        margin-right: 20px;
+    }
+}
+
+
+
+@media (max-width:1000px) {
+    .main-right {
+        height: 90vh;
+        width: 40%;
+    }
+}
+
 @media (max-width:600px) {
     .main-middle {
         width: 100%;
+    }
+
+    .weather-info {
+        max-width: 500px;
+        height: auto;
+        position: absolute;
+        left: 5%;
+        margin-right: 20px;
     }
 
 }

@@ -52,7 +52,7 @@ fetch(`https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-B0053-001?Authorizat
     showWeatherInfoByCounty(Taichung, taichungMapName, taichungLocation);
 });
 
-function showWeatherInfoByCounty(county, countyOnMap, countyLocationNameInArray){
+function showWeatherInfoByCounty(county, countyOnMap, countyLocationNameInArray) {
 
     countyOnMap.addEventListener("click", () => {
         const locationName = document.querySelector(`.location-title-name`);
@@ -62,12 +62,13 @@ function showWeatherInfoByCounty(county, countyOnMap, countyLocationNameInArray)
 
         locationName.textContent = countyLocationNameInArray.locationName;
         temperature.textContent = `${countyLocationNameInArray.weatherElement[4].time[0].elementValue.value}-${countyLocationNameInArray.weatherElement[3].time[0].elementValue.value}`;
+        backgroundImg(countyLocationNameInArray.weatherElement[9].time[0].elementValue.value)
         rainPosibilty.textContent = countyLocationNameInArray.weatherElement[9].time[0].elementValue.value + "%";
         nv.textContent = `${countyLocationNameInArray.weatherElement[13].time[0].elementValue[0].value} / ${countyLocationNameInArray.weatherElement[13].time[0].elementValue[1].value}`;
     });
 
     county.addEventListener("click", () => {
-        
+
         const locationName = document.querySelector(`.location-title-name`);
         const temperature = document.querySelector(`.temperature-content`);
         const rainPosibilty = document.querySelector(`.rain-posibilty-content`);
@@ -76,6 +77,19 @@ function showWeatherInfoByCounty(county, countyOnMap, countyLocationNameInArray)
         locationName.textContent = countyLocationNameInArray.locationName;
         temperature.textContent = `${countyLocationNameInArray.weatherElement[4].time[0].elementValue.value}-${countyLocationNameInArray.weatherElement[3].time[0].elementValue.value}`;
         rainPosibilty.textContent = countyLocationNameInArray.weatherElement[9].time[0].elementValue.value + "%";
+        backgroundImg(countyLocationNameInArray.weatherElement[9].time[0].elementValue.value)
         nv.textContent = `${countyLocationNameInArray.weatherElement[13].time[0].elementValue[0].value} / ${countyLocationNameInArray.weatherElement[13].time[0].elementValue[1].value}`;
     });
+}
+
+
+function backgroundImg(rainPosibilty) {
+    const main = document.querySelector('.main')
+    if (rainPosibilty >= 50) {
+        main.style.backgroundImage = "url(images/beach-rainy.jpg)"
+    } else if (rainPosibilty >= 30 && rainPosibilty < 50) {
+        main.style.backgroundImage = "url(images/beach-cloudy.jpg)"
+    } else {
+        main.style.backgroundImage = "url(images/beach-sunny.jpg)"
+    }
 }

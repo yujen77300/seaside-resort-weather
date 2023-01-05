@@ -4,7 +4,7 @@ fetch(`https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-B0053-001?Authorizat
     })
     .then(function (data) {
         let locations = data.cwbopendata.dataset.locations.location;
-        // console.log(locations)
+        backgroundImg(locations[0].weatherElement[9].time[0].elementValue.value)
         let locationData = [
             //宜蘭頭城
             {
@@ -73,12 +73,14 @@ function insertLocationData(locationData) {
         location.textContent = locationData[0].locationName
         temperatureContent.textContent = locationData[0].temp
         rainPosibiltyContent.textContent = locationData[0].rain + "%"
+        backgroundImg(locationData[0].rain)
         nvContent.textContent = locationData[0].uvi
     })
     yilan.addEventListener('click', () => {
         location.textContent = locationData[0].locationName
         temperatureContent.textContent = locationData[0].temp
         rainPosibiltyContent.textContent = locationData[0].rain + "%"
+        backgroundImg(locationData[0].rain)
         nvContent.textContent = locationData[0].uvi
     })
 
@@ -88,6 +90,7 @@ function insertLocationData(locationData) {
         location.textContent = locationData[1].locationName
         temperatureContent.textContent = locationData[1].temp
         rainPosibiltyContent.textContent = locationData[1].rain + "%"
+        backgroundImg(locationData[1].rain)
         nvContent.textContent = locationData[1].uvi
     })
 
@@ -95,6 +98,7 @@ function insertLocationData(locationData) {
         location.textContent = locationData[1].locationName
         temperatureContent.textContent = locationData[1].temp
         rainPosibiltyContent.textContent = locationData[1].rain + "%"
+        backgroundImg(locationData[1].rain)
         nvContent.textContent = locationData[1].uvi
     })
 
@@ -109,6 +113,7 @@ function insertLocationData(locationData) {
         } else {
             rainPosibiltyContent.textContent = locationData[2].rain + "%"
         }
+        backgroundImg(locationData[2].rain)
         nvContent.textContent = locationData[2].uvi
     })
 
@@ -116,6 +121,7 @@ function insertLocationData(locationData) {
         location.textContent = locationData[2].locationName
         temperatureContent.textContent = locationData[2].temp
         rainPosibiltyContent.textContent = locationData[2].rain + "%"
+        backgroundImg(locationData[2].rain)
         nvContent.textContent = locationData[2].uvi
     })
 
@@ -126,12 +132,14 @@ function insertLocationData(locationData) {
         location.textContent = locationData[3].locationName
         temperatureContent.textContent = locationData[3].temp
         rainPosibiltyContent.textContent = locationData[3].rain + "%"
+        backgroundImg(locationData[3].rain)
         nvContent.textContent = locationData[3].uvi
     })
     miaoli.addEventListener('click', () => {
         location.textContent = locationData[3].locationName
         temperatureContent.textContent = locationData[3].temp
         rainPosibiltyContent.textContent = locationData[3].rain + "%"
+        backgroundImg(locationData[3].rain)
         nvContent.textContent = locationData[3].uvi
     })
 
@@ -142,12 +150,14 @@ function insertLocationData(locationData) {
         location.textContent = locationData[4].locationName
         temperatureContent.textContent = locationData[4].temp
         rainPosibiltyContent.textContent = locationData[4].rain + "%"
+        backgroundImg(locationData[4].rain)
         nvContent.textContent = locationData[4].uvi
     })
     kaohsiung.addEventListener('click', () => {
         location.textContent = locationData[4].locationName
         temperatureContent.textContent = locationData[4].temp
         rainPosibiltyContent.textContent = locationData[4].rain + "%"
+        backgroundImg(locationData[4].rain)
         nvContent.textContent = locationData[4].uvi
     })
 
@@ -157,6 +167,7 @@ function insertLocationData(locationData) {
         location.textContent = locationData[5].locationName
         temperatureContent.textContent = locationData[5].temp
         rainPosibiltyContent.textContent = locationData[5].rain + "%"
+        backgroundImg(locationData[5].rain)
         nvContent.textContent = locationData[5].uvi
     })
 
@@ -164,10 +175,20 @@ function insertLocationData(locationData) {
         location.textContent = locationData[5].locationName
         temperatureContent.textContent = locationData[5].temp
         rainPosibiltyContent.textContent = locationData[5].rain + "%"
+        backgroundImg(locationData[5].rain)
         nvContent.textContent = locationData[5].uvi
     })
 
 }
 
 
-
+function backgroundImg(rainPosibilty) {
+    const main = document.querySelector('.main')
+    if (rainPosibilty >= 50) {
+        main.style.backgroundImage = "url(images/beach-rainy.jpg)"
+    } else if (rainPosibilty >= 30 && rainPosibilty < 50) {
+        main.style.backgroundImage = "url(images/beach-cloudy.jpg)"
+    } else {
+        main.style.backgroundImage = "url(images/beach-sunny.jpg)"
+    }
+}

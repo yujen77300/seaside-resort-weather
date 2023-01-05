@@ -65,57 +65,59 @@ main {
 	cursor: pointer;
 }
 
-@keyframes expand{
-    from{
-      height: 0px;
-    }
-    to{
-      height: 420px;
-    }
-  }
+@keyframes expand {
+	from {
+		height: 0px;
+	}
 
-.main-left {
-    color:#e8e8e8;
-    position: absolute;
-    display: none;
-    overflow: hidden;
-    animation-name: expand;
-    animation-duration: 2s;
-    right: 0;
-    top: 40px;
-    list-style:none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    width: 122px;    
-    border-radius: 5px;
+	to {
+		height: 420px;
+	}
 }
 
-@keyframes collapse{
-    from{
-      height: 420px;
-    }
-    to{
-      height: 0px;
-    }
-  }
+.main-left {
+	color: #e8e8e8;
+	position: absolute;
+	display: none;
+	overflow: hidden;
+	animation-name: expand;
+	animation-duration: 2s;
+	right: 0;
+	top: 40px;
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	width: 122px;
+	border-radius: 5px;
+}
+
+@keyframes collapse {
+	from {
+		height: 420px;
+	}
+
+	to {
+		height: 0px;
+	}
+}
 
 
-.main-left-collapse{
-    color:#e8e8e8;
-    position: absolute;
-    display: none;
-    overflow: hidden;
-    animation-name: collapse;
-    animation-duration: 2s;
-    right: 0;
-    top: 40px;
-    list-style:none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    width: 122px;    
-    border-radius: 5px;
+.main-left-collapse {
+	color: #e8e8e8;
+	position: absolute;
+	display: none;
+	overflow: hidden;
+	animation-name: collapse;
+	animation-duration: 2s;
+	right: 0;
+	top: 40px;
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	width: 122px;
+	border-radius: 5px;
 }
 
 
@@ -157,8 +159,12 @@ svg>g>path:hover {
 
 
 @media (max-width:600px) {
-	main {
+	/* main {
 		display: block;
+	} */
+
+	.main-right {
+		display: none;
 	}
 
 	.location>span {
@@ -166,6 +172,7 @@ svg>g>path:hover {
 	}
 
 	svg {
+		display: none;
 		height: 80vh;
 		width: 150%;
 		margin: 0 0 0 130px;
