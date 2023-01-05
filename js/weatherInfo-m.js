@@ -12,6 +12,18 @@ fetch(window.location.protocol + "//" + window.location.host + "/" + window.loca
     });
 })
 
+
+fetch(`https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-B0053-001?Authorization=${CWB_API_KEY}&format=JSON`).then((response) => {
+    return response.json();
+}).then((data) => {
+    console.log("測試")
+    console.log(data)
+    console.log(data.cwbopendata.dataset)
+    console.log(data.cwbopendata.dataset.locations)
+    console.log(data.cwbopendata.dataset.locations.location)
+});
+
+
 function showWeatherInfoByCounty(location, round){
     const counties = document.querySelectorAll(".region-item");
     const countiesArray = [...counties];

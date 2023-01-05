@@ -1,10 +1,14 @@
 .main-middle {
-    background-image: url("../images/sand\ image.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 900px; 
     height: 1200x;
 }
+
+main {
+    background-image: url("../images/beach-sunny.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
 .weather-info {
     max-width: 400px;
     height: auto;
@@ -28,7 +32,7 @@
 
 .temperature {
     font-size: 4vmin;
-    color:#666666;
+    color: #ffffff;
     font-weight: 700;
     letter-spacing: 1.8px;
     text-align: justify;
@@ -36,7 +40,7 @@
 
 .rain-posibilty {
     font-size: 4vmin;
-    color: #666666;
+    color: #ffffff;
     font-weight: 700;
     letter-spacing: 1.8px;
     padding: 10px 0;
@@ -46,7 +50,7 @@
 .uv {
     font-size: 4vmin;
     font-weight: 700;
-    color: #666666;
+    color: #ffffff;
     letter-spacing: 1.8px;
     text-align: justify;
     box-shadow: 18px 10px #caf0f8;
@@ -55,13 +59,9 @@
 }
 
 
-@media (max-width:600px){
-	.main-middle {
-		width: 100%;
-	}
-	
+@media (max-width:600px) {
+    .main-middle {
+        width: 100%;
+    }
+
 }
-
-
-
-
