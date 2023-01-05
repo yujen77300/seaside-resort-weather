@@ -24,7 +24,7 @@
 + 黃偲媁 : 六個縣市fetch結果呈現
   - weatherInfo-swei.js
 + 王雅筠 : 主要氣候資料之css呈現方式
-  - main.css
+  - index.html、main.css
 
 ## 成果展示連結。
 1. https://yujen77300.github.io/seaside-resort-weather/
