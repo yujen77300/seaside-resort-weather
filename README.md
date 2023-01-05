@@ -21,11 +21,10 @@
   - navbar-shawps.js、common.css、main.css
 + 黃育仁 : Host Repository, 動態背景圖, 部分RWD
   - index.html、common.css、main.css、common.js
-+ 黃偲媁 : 六個縣市fetch結果呈現,
++ 黃偲媁 : 六個縣市fetch結果呈現
   - weatherInfo-swei.js
 + 王雅筠 : 主要氣候資料之css呈現方式
   - main.css
-劉彥成、邱逸萍、黃育仁、黃偲媁、王雅筠
 
 ## 成果展示連結。
 1. https://yujen77300.github.io/seaside-resort-weather/
