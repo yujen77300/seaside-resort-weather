@@ -65,43 +65,58 @@ main {
 	cursor: pointer;
 }
 
-@keyframes expand {
-	from {
-		height: 0px;
-	}
-
-	to {
-		height: 420px;
-	}
-}
-
-@keyframes collapse {
-	from {
-		height: 420px;
-	}
-
-	to {
-		height: 0px;
-	}
-}
+@keyframes expand{
+    from{
+      height: 0px;
+    }
+    to{
+      height: 420px;
+    }
+  }
 
 .main-left {
-	color: #e8e8e8;
-	position: absolute;
-	display: none;
-	overflow: hidden;
-	animation-name: expand;
-	animation-duration: 2s;
-	right: 0;
-	top: 40px;
-	list-style: none;
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	width: 122px;
-	border-radius: 5px;
+    color:#e8e8e8;
+    position: absolute;
+    display: none;
+    overflow: hidden;
+    animation-name: expand;
+    animation-duration: 2s;
+    right: 0;
+    top: 40px;
+    list-style:none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 122px;    
+    border-radius: 5px;
 }
 
+@keyframes collapse{
+    from{
+      height: 420px;
+    }
+    to{
+      height: 0px;
+    }
+  }
+
+
+.main-left-collapse{
+    color:#e8e8e8;
+    position: absolute;
+    display: none;
+    overflow: hidden;
+    animation-name: collapse;
+    animation-duration: 2s;
+    right: 0;
+    top: 40px;
+    list-style:none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 122px;    
+    border-radius: 5px;
+}
 
 
 .main-right {
