@@ -162,7 +162,7 @@ function insertLocationData(locationData) {
     })
 
     let Keelung = document.querySelector("#Keelung")
-    let keelung = document.querySelector("#Keelung")
+    let keelung = document.querySelector(".Keelung")
     Keelung.addEventListener('click', () => {
         location.textContent = locationData[5].locationName
         temperatureContent.textContent = locationData[5].temp
