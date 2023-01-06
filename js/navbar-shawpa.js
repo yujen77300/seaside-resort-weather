@@ -1,4 +1,4 @@
-const chooseRegion = document.querySelector(".choose-icon");
+const chooseRegion = document.querySelector(".fa-angles-down");
 const mainLeft = document.querySelector(".main-left");
 
 chooseRegion.addEventListener('click',(e) => {    
@@ -9,12 +9,11 @@ chooseRegion.addEventListener('click',(e) => {
     }else{
         e.target.classList.add("fa-angles-down");
         e.target.classList.remove("fa-angles-up");
-
         mainLeft.classList.add("main-left-collapse");
         setTimeout(() => {
             mainLeft.classList.remove("main-left-collapse");;
             e.target.classList.remove("fa-angles-up");
-            e.target.classList.add("fa-angles-down");        
+            e.target.classList.add("fa-angles-down");
             mainLeft.style.display = "none";
             },
             1500
